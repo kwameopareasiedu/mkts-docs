@@ -20,14 +20,14 @@ module.exports = {
             },
             {
                 test: /\.(scss|css)$/,
-                use: [ { loader: "style-loader" }, { loader: "css-loader" }, { loader: "postcss-loader" }, { loader: "sass-loader" } ]
+                use: [{ loader: "style-loader" }, { loader: "css-loader" }, { loader: "postcss-loader" }, { loader: "sass-loader" }]
             },
             {
                 test: /\.(png|jp(e?)g|gif|svg)$/i,
                 use: [
                     {
                         loader: "url-loader",
-                        options: { name: "/dist/assets/[hash].[ext]", limit: 4096 }
+                        options: { name: "/assets/[hash].[ext]", limit: 4096 }
                     }
                 ]
             },
@@ -36,7 +36,7 @@ module.exports = {
                 use: [
                     {
                         loader: "file-loader",
-                        options: { publicPath: "/dist/assets", outputPath: "./dist/assets" }
+                        options: { publicPath: "/dist/assets", outputPath: "./assets" }
                     }
                 ]
             },
