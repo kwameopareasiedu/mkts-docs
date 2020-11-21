@@ -1,0 +1,14 @@
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 25px;
+    background-color: white;
+    box-shadow: 0 0 10px #aeaeae;
+    z-index: 10;
+
+    .spacer {
+        flex: 1 1;
+    }
+}
