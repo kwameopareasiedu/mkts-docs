@@ -3,6 +3,7 @@ import { Topbar } from "./topbar";
 import { ComparisonSection } from "./comparison-section";
 import "./app.scss";
 import { ToolsSection } from "./tools-section";
+import { GuidesSection } from "./guides";
 
 export const App = (): any => {
     return (
@@ -29,6 +30,8 @@ export const App = (): any => {
             <ComparisonSection />
 
             <ToolsSection />
+
+            <GuidesSection />
         </div>
     );
 };

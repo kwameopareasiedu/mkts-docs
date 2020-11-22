@@ -1,0 +1,41 @@
+#guides-section {
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+    padding: 100px 0;
+
+    #guide-tabs {
+        height: 75px;
+
+        #guide-tabs-content {
+            display: inline-flex;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 750px;
+            height: 75px;
+            background-color: white;
+            border: 2px solid var(--primary-color);
+
+            button {
+                flex: 1 1;
+                border-radius: 0;
+            }
+
+            button:hover,
+            button:active,
+            button:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        #guide-tabs-content.fixed {
+            position: fixed;
+            top: 76px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+    }
+}

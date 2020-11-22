@@ -13,8 +13,8 @@ export const ToolsSection = (): any => {
 
                     <div className="col-6 d-flex flex-column justify-content-center">
                         <p className="mb-5">
-                            <span>mkts</span> generates a ready-to-go application base, you can start working with right away. It preconfigures the
-                            generated project with many tools that you&apos;d otherwise have to setup yourself, saving you all the{" "}
+                            <span>mkts</span> generates a super straightforward, ready-to-go application base, you can start working with right away.
+                            It preconfigures your new project with many tools that you&apos;d otherwise have to setup yourself, saving you all the{" "}
                             <span>hassle.</span>
                         </p>
 
