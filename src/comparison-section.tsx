@@ -84,7 +84,7 @@ export const ComparisonSection = (): any => {
             />
 
             <div id="drag-slider-hint" style={{ opacity: visibilitySliderValue > 2 ? 0 : 1 }}>
-                Drag slider <span>&nbsp;</span> <i className="fa fa-arrows-alt-h" />
+                Drag the slider <span>&nbsp;</span> <i className="fa fa-arrows-alt-h" />
             </div>
         </section>
     );

@@ -2,6 +2,7 @@ import React from "react";
 import { Topbar } from "./topbar";
 import { ComparisonSection } from "./comparison-section";
 import "./app.scss";
+import { ToolsSection } from "./tools-section";
 
 export const App = (): any => {
     return (
@@ -26,6 +27,8 @@ export const App = (): any => {
             </section>
 
             <ComparisonSection />
+
+            <ToolsSection />
         </div>
     );
 };

@@ -123,6 +123,7 @@
         border: 3px solid #555;
         background-color: white;
         border-radius: 0 10px 10px 0;
+        animation: drag-slider-hint-animation 0.5s alternate infinite ease-in-out;
         transition: opacity 0.35s;
         pointer-events: none;
         z-index: 3;
@@ -141,5 +142,14 @@
         position: absolute;
         border: 20px solid transparent;
         border-right: 20px solid #555;
+    }
+
+    @keyframes drag-slider-hint-animation {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(20px);
+        }
     }
 }
