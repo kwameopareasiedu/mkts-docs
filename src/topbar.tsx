@@ -7,7 +7,7 @@ export const Topbar = (): any => {
             <h1>mkts</h1>
             <div className="spacer" />
             <a
-                className="btn btn-outline-primary btn-lg mr-2"
+                className="btn btn-outline-primary mr-2"
                 href="https://github.com/kwameopareasiedu/mkts"
                 rel="noreferrer noopener"
                 target="_blank">
@@ -15,14 +15,14 @@ export const Topbar = (): any => {
                 Github
             </a>
             <a
-                className="btn btn-outline-primary btn-lg mr-2"
+                className="btn btn-outline-danger mr-2"
                 href="https://www.patreon.com/kwameopareasiedu"
                 rel="noreferrer noopener"
                 target="_blank">
                 <i className="fab fa-patreon mr-2" />
                 Patreon
             </a>
-            <a className="btn btn-outline-primary" href="https://github.com/kwameopareasiedu" rel="noreferrer noopener" target="_blank">
+            <a className="btn btn-outline-info" href="https://github.com/kwameopareasiedu" rel="noreferrer noopener" target="_blank">
                 <i className="fa fa-user mr-2" />
                 Me
             </a>

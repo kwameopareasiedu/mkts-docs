@@ -4,7 +4,7 @@ import Coffee from "./assets/latte.svg";
 import "./comparison-section.scss";
 
 export const ComparisonSection = (): any => {
-    const sliderStartPosition = 65;
+    const sliderStartPosition = 115;
     const [visibilitySliderValue, setVisibilitySliderValue] = useState(0);
     const visibilitySliderRef = useRef();
     const dividerRef = useRef();
