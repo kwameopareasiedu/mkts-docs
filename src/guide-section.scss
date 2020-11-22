@@ -1,7 +1,7 @@
 #guides-section {
     position: relative;
-    min-height: 100vh;
     text-align: center;
+    background-color: #fafafa;
     padding: 100px 0;
 
     #guide-tabs {
@@ -16,6 +16,7 @@
             height: 75px;
             background-color: white;
             border: 2px solid var(--primary-color);
+            z-index: 1;
 
             button {
                 flex: 1 1;

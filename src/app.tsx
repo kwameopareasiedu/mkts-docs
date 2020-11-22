@@ -1,9 +1,10 @@
 import React from "react";
 import { Topbar } from "./topbar";
-import { ComparisonSection } from "./comparison-section";
-import "./app.scss";
+import { GuidesSection } from "./guide-section";
 import { ToolsSection } from "./tools-section";
-import { GuidesSection } from "./guides";
+import { ComparisonSection } from "./comparison-section";
+import { StaticFrontEndGuide } from "./static-frontend-guide";
+import "./app.scss";
 
 export const App = (): any => {
     return (
@@ -32,6 +33,8 @@ export const App = (): any => {
             <ToolsSection />
 
             <GuidesSection />
+
+            <StaticFrontEndGuide />
         </div>
     );
 };
