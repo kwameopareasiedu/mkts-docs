@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, MouseEvent } from "react";
 import "./guide-section.scss";
 
 export const GuidesSection = (): any => {
     const guideTabsRef = useRef();
     const guideTabsContentRef = useRef();
-    // const guideTabsContentWidth = useRef<number>(0);
 
     useEffect(() => {
         window.addEventListener("scroll", onWindowScroll);
@@ -14,7 +13,9 @@ export const GuidesSection = (): any => {
     const onWindowScroll = (): void => {
         const guideTab: HTMLElement = guideTabsRef.current;
         const guideTabContent: HTMLElement = guideTabsContentRef.current;
+        const guideContentButtons = guideTabContent ? Array.from(guideTabContent.children) : [];
 
+        // Compute content width of guide content as window scrolls
         if (guideTab && guideTabContent) {
             const minGuideTabScroll = 76;
             const maxGuideTabScroll = 400;
@@ -33,6 +34,32 @@ export const GuidesSection = (): any => {
                 guideTabContent.classList.add("fixed");
             } else guideTabContent.classList.remove("fixed");
         }
+
+        // Determine active button className
+        for (const button of guideContentButtons) {
+            const sectionId = button.getAttribute("data-element-id");
+            const section = document.querySelector(sectionId);
+
+            if (section) {
+                const { top, bottom } = section.getBoundingClientRect();
+                if (top < 151 && bottom > 151) button.classList.add("active");
+                else button.classList.remove("active");
+            }
+        }
+    };
+
+    const scrollToGuide = (e: MouseEvent<HTMLButtonElement>): void => {
+        const element = e.target as HTMLButtonElement;
+        const sectionId = element.getAttribute("data-element-id");
+        const section = document.querySelector(sectionId);
+
+        if (section) {
+            window.scrollTo({
+                behavior: "smooth",
+                top: section.getBoundingClientRect().top + window.scrollY - 150,
+                left: 0
+            });
+        }
     };
 
     return (
@@ -44,56 +71,20 @@ export const GuidesSection = (): any => {
 
             <div id="guide-tabs" className="mb-5" ref={guideTabsRef}>
                 <div id="guide-tabs-content" ref={guideTabsContentRef}>
-                    <button className="btn">Static Frontend Apps</button>
-                    <button className="btn">Frontend Server Apps</button>
-                    <button className="btn">API Server Apps</button>
-                    <button className="btn">Full Stack Apps</button>
+                    <button className="btn" data-element-id="#static-frontend-guide" onClick={scrollToGuide}>
+                        Static Frontend Apps
+                    </button>
+                    <button className="btn" data-element-id="#frontend-server-guide" onClick={scrollToGuide}>
+                        Frontend Server Apps
+                    </button>
+                    <button className="btn" data-element-id="#api-server-guide" onClick={scrollToGuide}>
+                        API Server Apps
+                    </button>
+                    <button className="btn" data-element-id="#full-stack-app-guide" onClick={scrollToGuide}>
+                        Full Stack Apps
+                    </button>
                 </div>
             </div>
-
-            {/*<div id="dummy-text" className="container">*/}
-            {/*    <p>*/}
-            {/*        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque,*/}
-            {/*        aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget*/}
-            {/*        blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede*/}
-            {/*        semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed*/}
-            {/*        lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque*/}
-            {/*        euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna. Morbi interdum*/}
-            {/*        mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero*/}
-            {/*        dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam*/}
-            {/*        pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a,*/}
-            {/*        lacinia eu, vulputate vel, nisl. Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper*/}
-            {/*        vehicula. Integer adipiscing risus a sem. Nullam quis massa sit amet nibh viverra malesuada. Nunc sem lacus, accumsan quis,*/}
-            {/*        faucibus non, congue vel, arcu. Ut scelerisque hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida tristique.*/}
-            {/*        Nunc iaculis mi in ante. Vivamus imperdiet nibh feugiat est. Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam*/}
-            {/*        leo, nec dapibus tortor nibh sed augue. Integer eu magna sit amet metus fermentum posuere. Morbi sit amet nulla sed dolor*/}
-            {/*        elementum imperdiet. Quisque fermentum. Cum sociis natoque penatibus et magnis xdis parturient montes, nascetur ridiculus mus.*/}
-            {/*        Pellentesque adipiscing eros ut libero. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida*/}
-            {/*        convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Etiam dignissim. Proin malesuada adipiscing*/}
-            {/*        lacus. Donec metus. Curabitur gravida*/}
-            {/*    </p>*/}
-
-            {/*    <p>*/}
-            {/*        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque,*/}
-            {/*        aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget*/}
-            {/*        blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros pede*/}
-            {/*        semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed*/}
-            {/*        lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque*/}
-            {/*        euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna. Morbi interdum*/}
-            {/*        mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero*/}
-            {/*        dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam*/}
-            {/*        pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a,*/}
-            {/*        lacinia eu, vulputate vel, nisl. Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper*/}
-            {/*        vehicula. Integer adipiscing risus a sem. Nullam quis massa sit amet nibh viverra malesuada. Nunc sem lacus, accumsan quis,*/}
-            {/*        faucibus non, congue vel, arcu. Ut scelerisque hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida tristique.*/}
-            {/*        Nunc iaculis mi in ante. Vivamus imperdiet nibh feugiat est. Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam*/}
-            {/*        leo, nec dapibus tortor nibh sed augue. Integer eu magna sit amet metus fermentum posuere. Morbi sit amet nulla sed dolor*/}
-            {/*        elementum imperdiet. Quisque fermentum. Cum sociis natoque penatibus et magnis xdis parturient montes, nascetur ridiculus mus.*/}
-            {/*        Pellentesque adipiscing eros ut libero. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida*/}
-            {/*        convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Etiam dignissim. Proin malesuada adipiscing*/}
-            {/*        lacus. Donec metus. Curabitur gravida*/}
-            {/*    </p>*/}
-            {/*</div>*/}
         </div>
     );
 };

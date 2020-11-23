@@ -16,11 +16,13 @@
             height: 75px;
             background-color: white;
             border: 2px solid var(--primary-color);
+            box-sizing: content-box;
             z-index: 1;
 
             button {
                 flex: 1 1;
                 border-radius: 0;
+                transition: font-size 0.35s, color 0.35s, background-color 0.35s;
             }
 
             button:hover,
@@ -28,6 +30,11 @@
             button:focus {
                 outline: none;
                 box-shadow: none;
+            }
+
+            button.active {
+                color: white;
+                background-color: var(--primary-color);
             }
         }
 

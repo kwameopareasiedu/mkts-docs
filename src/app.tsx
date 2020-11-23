@@ -5,6 +5,7 @@ import { ToolsSection } from "./tools-section";
 import { ComparisonSection } from "./comparison-section";
 import { StaticFrontEndGuide } from "./static-frontend-guide";
 import "./app.scss";
+import { FrontEndServerGuide } from "./frontend-server-guide";
 
 export const App = (): any => {
     return (
@@ -35,6 +36,8 @@ export const App = (): any => {
             <GuidesSection />
 
             <StaticFrontEndGuide />
+
+            <FrontEndServerGuide />
         </div>
     );
 };
