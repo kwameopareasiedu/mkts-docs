@@ -1,9 +1,9 @@
-.directory-file {
+.tree-file {
     position: relative;
     margin-bottom: 12px;
 }
 
-.directory-file::after {
+.tree-file::after {
     position: absolute;
     content: "";
     top: 14px;
@@ -13,7 +13,7 @@
     background-color: #555;
 }
 
-.directory-file:hover {
+.tree-file:hover {
     background-color: #e3e3e3;
     cursor: pointer;
 }

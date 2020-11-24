@@ -1,19 +1,19 @@
 import React from "react";
 import Folder from "../../assets/folder.svg";
-import "./directory-folder.scss";
+import "./tree-folder.scss";
 
-interface IDirectoryFolder {
+interface ITreeFolder {
     label: string;
     children?: any;
     onClick?: () => void;
 }
 
-export const DirectoryFolder = ({ label, children, onClick }: IDirectoryFolder): any => {
+export const TreeFolder = ({ label, children, onClick }: ITreeFolder): any => {
     return (
-        <div className="directory-folder">
+        <div className="tree-folder">
             <div className="d-flex align-items-center" onClick={onClick}>
                 <img src={Folder} alt="Folder" />
-                <p className="directory-name mb-0">{label}</p>
+                <p className="tree-name mb-0">{label}</p>
             </div>
 
             {children && <div className="content">{children}</div>}

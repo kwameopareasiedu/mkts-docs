@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./directory-viewer.scss";
+import "./file-tree.scss";
 
-interface IDirectoryViewer {
+interface ITreeViewer {
     children: (fn: (path: string, description: any) => void) => any;
 }
 
-export const DirectoryViewer = ({ children }: IDirectoryViewer): any => {
+export const FileTree = ({ children }: ITreeViewer): any => {
     const startScrollPosition = 287;
     const [selected, setSelected] = useState(null);
     const cardParentRef = useRef();
@@ -41,7 +41,7 @@ export const DirectoryViewer = ({ children }: IDirectoryViewer): any => {
     }, []);
 
     return (
-        <div className="directory-viewer container-fluid">
+        <div className="file-tree container-fluid">
             <div className="row">
                 <div className="col-6">{children(interceptSetSelected)}</div>
 

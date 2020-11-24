@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import "./static-frontend-guide.scss";
-import { DirectoryFile, DirectoryFolder, DirectoryViewer } from "./utils/directory-viewer";
+import { TreeFile, TreeFolder, FileTree } from "./utils/file-tree";
 
 export const StaticFrontEndGuide = (): any => {
     const fileDescriptions = [
@@ -98,32 +98,32 @@ export const StaticFrontEndGuide = (): any => {
                 <h3>Directory Structure</h3>
                 <p className="mb-5">The table below walks you through the directory structure of a static frontend application.</p>
 
-                <DirectoryViewer>
+                <FileTree>
                     {setDetails => (
-                        <DirectoryFolder label="Your app">
-                            <DirectoryFolder label="src" onClick={() => setDetails("src/", fileDescriptions[0])}>
-                                <DirectoryFile label="index.tsx" onClick={() => setDetails("src/index.tsx", fileDescriptions[1])} />
-                                <DirectoryFile label="app.tsx" onClick={() => setDetails("src/app.tsx", fileDescriptions[2])} />
-                                <DirectoryFile label="app.scss" onClick={() => setDetails("src/app.scss", fileDescriptions[3])} />
-                            </DirectoryFolder>
+                        <TreeFolder label="Your app">
+                            <TreeFolder label="src" onClick={() => setDetails("src/", fileDescriptions[0])}>
+                                <TreeFile label="index.tsx" onClick={() => setDetails("src/index.tsx", fileDescriptions[1])} />
+                                <TreeFile label="app.tsx" onClick={() => setDetails("src/app.tsx", fileDescriptions[2])} />
+                                <TreeFile label="app.scss" onClick={() => setDetails("src/app.scss", fileDescriptions[3])} />
+                            </TreeFolder>
 
-                            <DirectoryFolder label="dist" onClick={() => setDetails("dist/", fileDescriptions[4])}>
-                                <DirectoryFile label="bundle.js" onClick={() => setDetails("dist/bundle.js", fileDescriptions[5])} />
-                                <DirectoryFile label="index.html" onClick={() => setDetails("dist/index.html", fileDescriptions[6])} />
-                            </DirectoryFolder>
+                            <TreeFolder label="dist" onClick={() => setDetails("dist/", fileDescriptions[4])}>
+                                <TreeFile label="bundle.js" onClick={() => setDetails("dist/bundle.js", fileDescriptions[5])} />
+                                <TreeFile label="index.html" onClick={() => setDetails("dist/index.html", fileDescriptions[6])} />
+                            </TreeFolder>
 
-                            <DirectoryFile label=".babelrc.js" onClick={() => setDetails(".babelrc.js", fileDescriptions[7])} />
-                            <DirectoryFile label=".eslintrc.js" onClick={() => setDetails(".eslintrc.js", fileDescriptions[8])} />
-                            <DirectoryFile label=".gitignore.js" onClick={() => setDetails(".gitignore.js", fileDescriptions[9])} />
-                            <DirectoryFile label=".prettier.js" onClick={() => setDetails(".prettier.js", fileDescriptions[10])} />
-                            <DirectoryFile label="index.d.ts" onClick={() => setDetails("index.d.ts", fileDescriptions[11])} />
-                            <DirectoryFile label="package.json" onClick={() => setDetails("package.json", fileDescriptions[12])} />
-                            <DirectoryFile label="postcss.config.js" onClick={() => setDetails("postcss.config.js", fileDescriptions[13])} />
-                            <DirectoryFile label="tsconfig.js" onClick={() => setDetails("tsconfig.js", fileDescriptions[14])} />
-                            <DirectoryFile label="webpack.common.js" onClick={() => setDetails("webpack.common.js", fileDescriptions[15])} />
-                        </DirectoryFolder>
+                            <TreeFile label=".babelrc.js" onClick={() => setDetails(".babelrc.js", fileDescriptions[7])} />
+                            <TreeFile label=".eslintrc.js" onClick={() => setDetails(".eslintrc.js", fileDescriptions[8])} />
+                            <TreeFile label=".gitignore.js" onClick={() => setDetails(".gitignore.js", fileDescriptions[9])} />
+                            <TreeFile label=".prettier.js" onClick={() => setDetails(".prettier.js", fileDescriptions[10])} />
+                            <TreeFile label="index.d.ts" onClick={() => setDetails("index.d.ts", fileDescriptions[11])} />
+                            <TreeFile label="package.json" onClick={() => setDetails("package.json", fileDescriptions[12])} />
+                            <TreeFile label="postcss.config.js" onClick={() => setDetails("postcss.config.js", fileDescriptions[13])} />
+                            <TreeFile label="tsconfig.js" onClick={() => setDetails("tsconfig.js", fileDescriptions[14])} />
+                            <TreeFile label="webpack.common.js" onClick={() => setDetails("webpack.common.js", fileDescriptions[15])} />
+                        </TreeFolder>
                     )}
-                </DirectoryViewer>
+                </FileTree>
 
                 <br />
 

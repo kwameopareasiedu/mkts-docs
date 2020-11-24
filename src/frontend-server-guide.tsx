@@ -1,6 +1,6 @@
 import React from "react";
 import "./frontend-server-guide.scss";
-import { DirectoryFolder, DirectoryFile, DirectoryViewer } from "./utils/directory-viewer";
+import { TreeFolder, TreeFile, FileTree } from "./utils/file-tree";
 
 export const FrontEndServerGuide = (): any => {
     return (
@@ -12,32 +12,32 @@ export const FrontEndServerGuide = (): any => {
                     This option is preferred if your app responds to changes in the window URL
                 </p>
 
-                <DirectoryViewer>
+                <FileTree>
                     {() => (
-                        <DirectoryFolder label="Your app">
-                            <DirectoryFolder label="src">
-                                <DirectoryFile label="index.tsx" />
-                                <DirectoryFile label="app.tsx" />
-                                <DirectoryFile label="app.scss" />
-                            </DirectoryFolder>
+                        <TreeFolder label="Your app">
+                            <TreeFolder label="src">
+                                <TreeFile label="index.tsx" />
+                                <TreeFile label="app.tsx" />
+                                <TreeFile label="app.scss" />
+                            </TreeFolder>
 
-                            <DirectoryFolder label="dist">
-                                <DirectoryFile label="bundle.js" />
-                                <DirectoryFile label="index.html" />
-                            </DirectoryFolder>
+                            <TreeFolder label="dist">
+                                <TreeFile label="bundle.js" />
+                                <TreeFile label="index.html" />
+                            </TreeFolder>
 
-                            <DirectoryFile label=".babelrc.js" />
-                            <DirectoryFile label=".eslintrc.js" />
-                            <DirectoryFile label=".gitignore.js" />
-                            <DirectoryFile label=".prettier.js" />
-                            <DirectoryFile label="index.d.ts" />
-                            <DirectoryFile label="package.json" />
-                            <DirectoryFile label="postcss.config.js" />
-                            <DirectoryFile label="tsconfig.js" />
-                            <DirectoryFile label="webpack.common.js" />
-                        </DirectoryFolder>
+                            <TreeFile label=".babelrc.js" />
+                            <TreeFile label=".eslintrc.js" />
+                            <TreeFile label=".gitignore.js" />
+                            <TreeFile label=".prettier.js" />
+                            <TreeFile label="index.d.ts" />
+                            <TreeFile label="package.json" />
+                            <TreeFile label="postcss.config.js" />
+                            <TreeFile label="tsconfig.js" />
+                            <TreeFile label="webpack.common.js" />
+                        </TreeFolder>
                     )}
-                </DirectoryViewer>
+                </FileTree>
 
                 {/*<h3>Directory Structure</h3>*/}
                 {/*<p>The table below walks you through the directory structure of a static frontend application.</p>*/}

@@ -1,18 +1,18 @@
 import React from "react";
 import File from "../../assets/file.svg";
-import "./directory-file.scss";
+import "./tree-file.scss";
 
-interface IDirectoryFile {
+interface ITreeFile {
     label: string;
     onClick?: () => void;
 }
 
-export const DirectoryFile = ({ label, onClick }: IDirectoryFile): any => {
+export const TreeFile = ({ label, onClick }: ITreeFile): any => {
     return (
-        <div className="directory-file" onClick={onClick}>
+        <div className="tree-file" onClick={onClick}>
             <div className="d-flex align-items-center">
                 <img src={File} alt="Folder" className="mr-2" />
-                <p className="directory-name mb-0">{label}</p>
+                <p className="tree-name mb-0">{label}</p>
             </div>
         </div>
     );
