@@ -1,0 +1,23 @@
+.directory-viewer {
+    position: relative;
+    margin-bottom: 12px;
+
+    .right-div {
+        position: relative;
+
+        .card {
+            width: 100%;
+            min-height: 100px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 6px #c4c4c4;
+            border: none;
+        }
+
+        .card.fixed {
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            width: auto;
+        }
+    }
+}

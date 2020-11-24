@@ -1,15 +1,43 @@
 import React from "react";
 import "./frontend-server-guide.scss";
+import { DirectoryFolder, DirectoryFile, DirectoryViewer } from "./utils/directory-viewer";
 
 export const FrontEndServerGuide = (): any => {
     return (
         <div id="frontend-server-guide">
             <div className="container">
                 <h1 className="mb-4">Frontend Server Apps</h1>
-                <p>
+                <p className="mb-5">
                     Frontend server apps give you all the features of static apps with the addition of a minimalist NodeJS server to serve your site.
                     This option is preferred if your app responds to changes in the window URL
                 </p>
+
+                <DirectoryViewer>
+                    {() => (
+                        <DirectoryFolder label="Your app">
+                            <DirectoryFolder label="src">
+                                <DirectoryFile label="index.tsx" />
+                                <DirectoryFile label="app.tsx" />
+                                <DirectoryFile label="app.scss" />
+                            </DirectoryFolder>
+
+                            <DirectoryFolder label="dist">
+                                <DirectoryFile label="bundle.js" />
+                                <DirectoryFile label="index.html" />
+                            </DirectoryFolder>
+
+                            <DirectoryFile label=".babelrc.js" />
+                            <DirectoryFile label=".eslintrc.js" />
+                            <DirectoryFile label=".gitignore.js" />
+                            <DirectoryFile label=".prettier.js" />
+                            <DirectoryFile label="index.d.ts" />
+                            <DirectoryFile label="package.json" />
+                            <DirectoryFile label="postcss.config.js" />
+                            <DirectoryFile label="tsconfig.js" />
+                            <DirectoryFile label="webpack.common.js" />
+                        </DirectoryFolder>
+                    )}
+                </DirectoryViewer>
 
                 {/*<h3>Directory Structure</h3>*/}
                 {/*<p>The table below walks you through the directory structure of a static frontend application.</p>*/}

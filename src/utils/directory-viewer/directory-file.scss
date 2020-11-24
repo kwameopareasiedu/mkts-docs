@@ -1,0 +1,19 @@
+.directory-file {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.directory-file::after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    left: -28px;
+    width: 16px;
+    height: 1px;
+    background-color: #555;
+}
+
+.directory-file:hover {
+    background-color: #e3e3e3;
+    cursor: pointer;
+}

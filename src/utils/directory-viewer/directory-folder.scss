@@ -1,0 +1,38 @@
+.directory-folder {
+    position: relative;
+
+    img {
+        width: 24px;
+        margin-right: 16px;
+    }
+
+    .d-flex:hover {
+        background-color: #e3e3e3;
+        cursor: pointer;
+    }
+
+    .content {
+        margin-top: 12px;
+        padding-left: 40px;
+
+        .directory-folder::before {
+            position: absolute;
+            content: "";
+            top: 14px;
+            left: -28px;
+            width: 16px;
+            height: 1px;
+            background-color: #555;
+        }
+    }
+}
+
+.directory-folder::after {
+    position: absolute;
+    content: "";
+    top: 35px;
+    left: 12px;
+    width: 1px;
+    height: calc(100% - 45px);
+    background-color: #555;
+}
