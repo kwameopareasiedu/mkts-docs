@@ -47,19 +47,17 @@ export const FileTree = ({ children }: ITreeViewer): any => {
 
                 <div ref={cardParentRef} className="right-div col-6">
                     <div ref={cardRef} className="card">
-                        {!selected && (
-                            <div className="card-body d-flex align-items-center justify-content-center">
-                                <i className="mb-0">Click a file/folder to view it&apos;s description</i>
-                            </div>
-                        )}
-
-                        {selected && (
+                        {selected ? (
                             <div className="card-body">
                                 <React.Fragment>
-                                    <h3>{selected.path}</h3>
+                                    <h4>{selected.path}</h4>
                                     <hr />
                                     {selected.description}
                                 </React.Fragment>
+                            </div>
+                        ) : (
+                            <div className="card-body d-flex align-items-center justify-content-center">
+                                <i>Click a file/folder to view it&apos;s description</i>
                             </div>
                         )}
                     </div>
