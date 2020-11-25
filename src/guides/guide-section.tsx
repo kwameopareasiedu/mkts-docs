@@ -5,7 +5,6 @@ export const GuidesSection = (): any => {
     const minGuideTabScroll = 76;
     const maxGuideTabScroll = 400;
     const minGuideTabContentWidth = 750;
-    const maxGuideTabContentWidth = window.innerWidth;
     const activeSectionScrollThreshold = 126;
     const guideTabsContentRef = useRef();
     const guideTabsRef = useRef();
@@ -19,6 +18,7 @@ export const GuidesSection = (): any => {
         const guideTab: HTMLElement = guideTabsRef.current;
         const guideTabContent: HTMLElement = guideTabsContentRef.current;
         const guideContentButtons = guideTabContent ? Array.from(guideTabContent.children) : [];
+        const maxGuideTabContentWidth = window.innerWidth;
 
         // Compute content width of guide content as window scrolls
         if (guideTab && guideTabContent) {

@@ -6,7 +6,8 @@ interface ITreeViewer {
 }
 
 export const FileTree = ({ children }: ITreeViewer): any => {
-    const startScrollPosition = 287;
+    const parentPadding = 15;
+    const startScrollPosition = 280;
     const [selected, setSelected] = useState(null);
     const cardParentRef = useRef();
     const cardRef = useRef();
@@ -21,17 +22,19 @@ export const FileTree = ({ children }: ITreeViewer): any => {
         const card: HTMLElement = cardRef.current;
 
         if (cardParent && card) {
-            const { top: parentTop, bottom: parentBottom } = cardParent.getBoundingClientRect();
+            const { top: parentTop, left: parentLeft, right: parentRight, bottom: parentBottom } = cardParent.getBoundingClientRect();
 
             if (parentBottom > startScrollPosition + card.clientHeight) {
+                if (card.classList.contains("fixed-with-parent")) card.classList.remove("fixed-with-parent");
+
                 if (parentTop <= startScrollPosition) {
-                    card.classList.add("fixed");
-                    card.style.top = Math.abs(parentTop - startScrollPosition) + "px";
-                } else {
-                    card.classList.remove("fixed");
-                    card.style.top = "0";
-                }
-            }
+                    card.style.setProperty("--card-fixed-top", startScrollPosition + "px");
+                    card.style.setProperty("--card-fixed-left", parentLeft + parentPadding + "px");
+                    card.style.setProperty("--card-fixed-right", parentRight - parentPadding + "px");
+                    card.style.setProperty("--card-fixed-width", parentRight - parentLeft - 2 * parentPadding + "px");
+                    if (!card.classList.contains("fixed")) card.classList.add("fixed");
+                } else card.classList.remove("fixed");
+            } else card.classList.add("fixed-with-parent");
         }
     };
 

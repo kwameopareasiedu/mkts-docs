@@ -6,7 +6,6 @@
         position: relative;
 
         .card {
-            width: 100%;
             min-height: 100px;
             border-radius: 15px;
             box-shadow: 2px 2px 6px #c4c4c4;
@@ -18,10 +17,24 @@
         }
 
         .card.fixed {
+            --card-fixed-top: 0;
+            --card-fixed-left: 0;
+            --card-fixed-right: 0;
+            --card-fixed-width: 0;
+
+            position: fixed;
+            top: var(--card-fixed-top);
+            left: var(--card-fixed-left);
+            right: var(--card-fixed-right);
+            width: var(--card-fixed-width);
+        }
+
+        .card.fixed-with-parent {
             position: absolute;
-            left: 15px;
-            right: 15px;
-            width: auto;
+            top: unset;
+            left: unset;
+            right: unset;
+            bottom: 0;
         }
     }
 }
