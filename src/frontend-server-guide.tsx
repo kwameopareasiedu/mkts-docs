@@ -212,8 +212,7 @@ export const FrontEndServerGuide = (): any => {
                                     </a>
                                     . PostCSS adds vendor prefixes to your CSS code. An example is when you add the <code>:fullscreen</code> pseudo
                                     class, PostCSS will inject the <code>:webkit-full-screen</code> and <code>:ms-fullscreen</code> pseudo classes
-                                    into the final CSS file automatically.
-                                    <i>Normally, you’ll never have to edit this file</i>.
+                                    into the final CSS file automatically. <i>Normally, you’ll never have to edit this file</i>.
                                 </p>
                             </TreeFile>
 

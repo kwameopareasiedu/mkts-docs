@@ -2,8 +2,13 @@ import React, { useEffect, useRef, MouseEvent } from "react";
 import "./guide-section.scss";
 
 export const GuidesSection = (): any => {
-    const guideTabsRef = useRef();
+    const minGuideTabScroll = 76;
+    const maxGuideTabScroll = 400;
+    const minGuideTabContentWidth = 750;
+    const maxGuideTabContentWidth = window.innerWidth;
+    const activeSectionScrollThreshold = 126;
     const guideTabsContentRef = useRef();
+    const guideTabsRef = useRef();
 
     useEffect(() => {
         window.addEventListener("scroll", onWindowScroll);
@@ -17,11 +22,6 @@ export const GuidesSection = (): any => {
 
         // Compute content width of guide content as window scrolls
         if (guideTab && guideTabContent) {
-            const minGuideTabScroll = 76;
-            const maxGuideTabScroll = 400;
-            const minGuideTabContentWidth = 750;
-            const maxGuideTabContentWidth = window.innerWidth;
-
             const guideTabScroll = guideTab.getBoundingClientRect().top;
             const clampedGuideTabScroll = Math.min(maxGuideTabScroll, Math.max(minGuideTabScroll, guideTabScroll));
 
@@ -37,12 +37,12 @@ export const GuidesSection = (): any => {
 
         // Determine active button className
         for (const button of guideContentButtons) {
-            const sectionId = button.getAttribute("data-element-id");
+            const sectionId = button.getAttribute("data-id");
             const section = document.querySelector(sectionId);
 
             if (section) {
                 const { top, bottom } = section.getBoundingClientRect();
-                if (top < 151 && bottom > 151) button.classList.add("active");
+                if (top < activeSectionScrollThreshold && bottom > activeSectionScrollThreshold) button.classList.add("active");
                 else button.classList.remove("active");
             }
         }
@@ -50,7 +50,7 @@ export const GuidesSection = (): any => {
 
     const scrollToGuide = (e: MouseEvent<HTMLButtonElement>): void => {
         const element = e.target as HTMLButtonElement;
-        const sectionId = element.getAttribute("data-element-id");
+        const sectionId = element.getAttribute("data-id");
         const section = document.querySelector(sectionId);
 
         if (section) {
@@ -71,16 +71,16 @@ export const GuidesSection = (): any => {
 
             <div id="guide-tabs" className="mb-5" ref={guideTabsRef}>
                 <div id="guide-tabs-content" ref={guideTabsContentRef}>
-                    <button className="btn" data-element-id="#static-frontend-guide" onClick={scrollToGuide}>
+                    <button className="btn" data-id="#static-frontend-guide" onClick={scrollToGuide}>
                         Static Frontend Apps
                     </button>
-                    <button className="btn" data-element-id="#frontend-server-guide" onClick={scrollToGuide}>
+                    <button className="btn" data-id="#frontend-server-guide" onClick={scrollToGuide}>
                         Frontend Server Apps
                     </button>
-                    <button className="btn" data-element-id="#api-server-guide" onClick={scrollToGuide}>
+                    <button className="btn" data-id="#api-server-guide" onClick={scrollToGuide}>
                         API Server Apps
                     </button>
-                    <button className="btn" data-element-id="#full-stack-app-guide" onClick={scrollToGuide}>
+                    <button className="btn" data-id="#full-stack-app-guide" onClick={scrollToGuide}>
                         Full Stack Apps
                     </button>
                 </div>
