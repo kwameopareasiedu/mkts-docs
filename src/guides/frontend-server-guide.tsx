@@ -1,6 +1,6 @@
 import React from "react";
 import "./frontend-server-guide.scss";
-import { TreeFolder, TreeFile, FileTree } from "./utils/file-tree";
+import { TreeFolder, TreeFile, FileTree } from "../utils/file-tree";
 
 export const FrontEndServerGuide = (): any => {
     return (

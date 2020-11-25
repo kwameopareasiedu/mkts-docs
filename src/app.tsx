@@ -1,11 +1,9 @@
 import React from "react";
 import { Topbar } from "./topbar";
-import { GuidesSection } from "./guide-section";
 import { ToolsSection } from "./tools-section";
 import { ComparisonSection } from "./comparison-section";
-import { StaticFrontEndGuide } from "./static-frontend-guide";
+import { GuidesSection, StaticFrontEndGuide, FrontEndServerGuide } from "./guides";
 import "./app.scss";
-import { FrontEndServerGuide } from "./frontend-server-guide";
 
 export const App = (): any => {
     return (

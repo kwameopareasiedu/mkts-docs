@@ -1,6 +1,6 @@
 import React from "react";
 import "./static-frontend-guide.scss";
-import { TreeFile, TreeFolder, FileTree } from "./utils/file-tree";
+import { TreeFile, TreeFolder, FileTree } from "../utils/file-tree";
 
 export const StaticFrontEndGuide = (): any => {
     return (
