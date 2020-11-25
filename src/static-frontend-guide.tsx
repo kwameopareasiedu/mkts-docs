@@ -153,46 +153,56 @@ export const StaticFrontEndGuide = (): any => {
 
                 <br />
 
-                <h3>Starting webpack</h3>
+                <div className="row">
+                    <div className="col-6">
+                        <h3>Starting webpack</h3>
 
-                <p>
-                    As mentioned previously, Webpack is a module bundler and uses the other configured tools to bundle your source code and assets
-                    into one or more files that you can include in your html. By starting webpack in watch mode, it will automatically rebuild when
-                    you make a change in the source code.
-                </p>
+                        <p>
+                            As mentioned previously, Webpack is a module bundler and uses the other configured tools to bundle your source code and
+                            assets into one or more files that you can include in your html. By starting webpack in watch mode, it will automatically
+                            rebuild when you make a change in the source code.
+                        </p>
 
-                <p className="mb-5">
-                    To start webpack in watch mode, you can run either <code>yarn dev</code> or <code>npm run dev</code> at the project root. This
-                    starts a daemon process that you can end using <code>Ctrl+C</code>.
-                </p>
+                        <p className="mb-5">
+                            To start webpack in watch mode, you can run either <code>yarn dev</code> or <code>npm run dev</code> at the project root.
+                            This starts a daemon process that you can end using <code>Ctrl+C</code>.
+                        </p>
+                    </div>
 
-                <h3>Building for production</h3>
+                    <div className="col-6">
+                        <h3>Building for production</h3>
 
-                <p>
-                    In the previous section, webpack runs in watch mode, but it builds the files in development mode. In this mode, the files will be
-                    much larger in size, since they contain a lot of assertion code. When you are ready to deploy, you need to build in production
-                    mode.
-                </p>
+                        <p>
+                            In the previous section, webpack runs in watch mode, but it builds the files in development mode. In this mode, the files
+                            will be much larger in size, since they contain a lot of assertion code. When you are ready to deploy, you need to build
+                            in production mode.
+                        </p>
 
-                <p className="mb-5">
-                    To build in production mode, run <code>yarn build</code> or <code>npm run build</code> at the project root.
-                </p>
+                        <p className="mb-5">
+                            To build in production mode, run <code>yarn build</code> or <code>npm run build</code> at the project root.
+                        </p>
+                    </div>
 
-                <h3>Previewing</h3>
+                    <div className="col-6">
+                        <h3>Previewing</h3>
 
-                <p className="mb-5">
-                    Webpack builds your source codes into a single <code>dist/bundle.js</code> file with an <code>dist/assets/</code> folder at the
-                    root of your project. This file is already referenced in your <code>dist/index.html</code> file as a script tag. To preview your
-                    app, open the <code>dist/index.html</code> file in your browser.
-                </p>
+                        <p className="mb-5">
+                            Webpack builds your source codes into a single <code>dist/bundle.js</code> file with an <code>dist/assets/</code> folder
+                            at the root of your project. This file is already referenced in your <code>dist/index.html</code> file as a script tag. To
+                            preview your app, open the <code>dist/index.html</code> file in your browser.
+                        </p>
+                    </div>
 
-                <h3>Upgrading dependencies</h3>
+                    <div className="col-6">
+                        <h3>Upgrading dependencies</h3>
 
-                <p>
-                    <strong>mkts</strong> installs project with the last known stable major versions of dependencies. If you&apos;d like to upgrade
-                    the dependencies, you can use <code>yarn outdated</code> or <code>npm outdated</code> to find which dependencies need upgrading.
-                    Then you can use <code>yarn upgrade</code> or <code>npm update</code> to run upgrade.
-                </p>
+                        <p>
+                            <strong>mkts</strong> installs project with the last known stable major versions of dependencies. If you&apos;d like to
+                            upgrade the dependencies, you can use <code>yarn outdated</code> or <code>npm outdated</code> to find which dependencies
+                            need upgrading. Then you can use <code>yarn upgrade</code> or <code>npm update</code> to run upgrade.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     );

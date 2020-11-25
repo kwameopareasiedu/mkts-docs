@@ -266,51 +266,61 @@ export const FrontEndServerGuide = (): any => {
 
                 <br />
 
-                <h3>Start development mode</h3>
+                <div className="row">
+                    <div className="col-6">
+                        <h3>Start development mode</h3>
 
-                <p>
-                    Development mode does two things when triggered:
-                    <ol>
-                        <li>
-                            Instructs webpack to compile heavy libraries (React, ReactDOM, etc) to the <code>dist/lib/</code> folder
-                        </li>
-                        <li>
-                            Starts the development server, <code>server.js</code>
-                        </li>
-                        <li>Starts up webpack in watch mode to rebuild your source code anytime there is a change</li>
-                    </ol>
-                </p>
+                        <p>
+                            Development mode does two things when triggered:
+                            <ol>
+                                <li>
+                                    Instructs webpack to compile heavy libraries (React, ReactDOM, etc) to the <code>dist/lib/</code> folder
+                                </li>
+                                <li>
+                                    Starts the development server, <code>server.js</code>
+                                </li>
+                                <li>Starts up webpack in watch mode to rebuild your source code anytime there is a change</li>
+                            </ol>
+                        </p>
 
-                <p className="mb-5">
-                    To start the development, run <code>yarn dev</code> or <code>npm start dev</code>.
-                </p>
+                        <p className="mb-5">
+                            To start the development, run <code>yarn dev</code> or <code>npm start dev</code>.
+                        </p>
+                    </div>
 
-                <h3>Building for production</h3>
+                    <div className="col-6">
+                        <h3>Building for production</h3>
 
-                <p>
-                    In the previous section, webpack runs in watch mode, but it builds the files in <strong>development</strong> mode. In this mode,
-                    the files will be much larger in size, since they contain a lot of assertion code. When you are ready to deploy, you need to build
-                    in production mode.
-                </p>
+                        <p>
+                            In the previous section, webpack runs in watch mode, but it builds the files in <strong>development</strong> mode. In this
+                            mode, the files will be much larger in size, since they contain a lot of assertion code. When you are ready to deploy, you
+                            need to build in production mode.
+                        </p>
 
-                <p className="mb-5">
-                    To build in production mode, run <code>yarn build</code> or <code>npm run build</code> at the project root.
-                </p>
+                        <p className="mb-5">
+                            To build in production mode, run <code>yarn build</code> or <code>npm run build</code> at the project root.
+                        </p>
+                    </div>
 
-                <h3>Previewing</h3>
+                    <div className="col-6">
+                        <h3>Previewing</h3>
 
-                <p className="mb-5">
-                    To view our application, open your browser and enter <code>http://127.0.0.1:3000</code> in the address bar. Since we are running a
-                    server, the request will be processed and the webpage will be rendered.
-                </p>
+                        <p className="mb-5">
+                            To view our application, open your browser and enter <code>http://127.0.0.1:3000</code> in the address bar. Since we are
+                            running a server, the request will be processed and the webpage will be rendered.
+                        </p>
+                    </div>
 
-                <h3>Upgrading dependencies</h3>
+                    <div className="col-6">
+                        <h3>Upgrading dependencies</h3>
 
-                <p>
-                    <strong>mkts</strong> installs project with the last known stable major versions of dependencies. If you&apos;d like to upgrade
-                    the dependencies, you can use <code>yarn outdated</code> or <code>npm outdated</code> to find which dependencies need upgrading.
-                    Then you can use <code>yarn upgrade</code> or <code>npm update</code> to run upgrade.
-                </p>
+                        <p>
+                            <strong>mkts</strong> installs project with the last known stable major versions of dependencies. If you&apos;d like to
+                            upgrade the dependencies, you can use <code>yarn outdated</code> or <code>npm outdated</code> to find which dependencies
+                            need upgrading. Then you can use <code>yarn upgrade</code> or <code>npm update</code> to run upgrade.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     );
