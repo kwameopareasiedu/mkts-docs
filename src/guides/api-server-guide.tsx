@@ -1,5 +1,5 @@
 import React from "react";
-import { TreeFile, TreeFolder, FileTree } from "../utils/file-tree";
+import { TreeFile, TreeFolder, FileTree } from "../file-tree";
 import "./api-server-guide.scss";
 
 export const ApiServerGuide = (): any => {

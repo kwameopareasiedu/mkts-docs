@@ -1,5 +1,5 @@
 import React from "react";
-import Folder from "../../assets/folder.svg";
+import Folder from "../assets/folder.svg";
 import "./tree-folder.scss";
 
 interface ITreeFolder {

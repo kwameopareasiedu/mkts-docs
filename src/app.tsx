@@ -40,6 +40,36 @@ export const App = (): any => {
             <ApiServerGuide />
 
             <FullStackAppGuide />
+
+            <footer>
+                <div className="container-fluid text-center">
+                    <h1 className="mb-0">mkts</h1>
+
+                    <p className="mb-4">
+                        <i>#make typescript</i>
+                    </p>
+
+                    <a className="btn btn-link mr-2" href="https://github.com/kwameopareasiedu/mkts" rel="noreferrer noopener" target="_blank">
+                        <i className="fa fa-github mr-2" />
+                        Star on Github
+                    </a>
+
+                    <a className="btn btn-link mr-2" href="https://www.patreon.com/kwameopareasiedu" rel="noreferrer noopener" target="_blank">
+                        <i className="fab fa-patreon mr-2" />
+                        Support on Patreon
+                    </a>
+
+                    <br />
+                    <br />
+
+                    <p className="mb-0">
+                        <a className="btn btn-link p-0" href="https://github.com/kwameopareasiedu" rel="noreferrer noopener" target="_blank">
+                            Kwame Opare Asiedu
+                        </a>
+                        <span>, 2020.</span>
+                    </p>
+                </div>
+            </footer>
         </div>
     );
 };

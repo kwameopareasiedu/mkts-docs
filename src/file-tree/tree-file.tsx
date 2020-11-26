@@ -1,5 +1,5 @@
 import React from "react";
-import File from "../../assets/file.svg";
+import File from "../assets/file.svg";
 import "./tree-file.scss";
 
 interface ITreeFile {

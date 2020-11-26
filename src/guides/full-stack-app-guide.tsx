@@ -1,5 +1,5 @@
 import React from "react";
-import { TreeFile, TreeFolder, FileTree } from "../utils/file-tree";
+import { TreeFile, TreeFolder, FileTree } from "../file-tree";
 import "./full-stack-app-guide.scss";
 
 export const FullStackAppGuide = (): any => {
