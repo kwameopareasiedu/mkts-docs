@@ -12,6 +12,9 @@ export const FrontEndServerGuide = (): any => {
                     This option is preferred if your app responds to changes in the window URL
                 </p>
 
+                <h3>Directory Structure</h3>
+                <p className="mb-5">The table below walks you through the directory structure of a frontend server application.</p>
+
                 <FileTree>
                     {setDetails => (
                         <TreeFolder label="Your app">
@@ -79,16 +82,19 @@ export const FrontEndServerGuide = (): any => {
                                         </TreeFile>
                                     </TreeFolder>
 
-                                    <TreeFolder label="logout" onClick={d => setDetails("src/public/logout/", d)}>
+                                    <TreeFile label="app.tsx" onClick={d => setDetails("src/public/app.tsx", d)}>
                                         <p>
-                                            This folder contains a simple preconfigured logout component. Feel free to either use it or replace with
-                                            your component.
+                                            This file is start of your actual app. The boilerplate code is very minimal here. Hence, you are free to
+                                            architect your app however you want.
                                         </p>
+                                    </TreeFile>
 
-                                        <TreeFile label="index.tsx" onClick={d => setDetails("src/public/logout/index.tsx", d)}>
-                                            <p>This file is the React source code of the logout component.</p>
-                                        </TreeFile>
-                                    </TreeFolder>
+                                    <TreeFile label="index.tsx" onClick={d => setDetails("src/public/index.tsx", d)}>
+                                        <p>
+                                            This file is the entry point to the public section of your app. During bundling, this is the file the
+                                            bundler starts with.
+                                        </p>
+                                    </TreeFile>
                                 </TreeFolder>
                             </TreeFolder>
 
@@ -269,21 +275,20 @@ export const FrontEndServerGuide = (): any => {
                     <div className="col-6">
                         <h3>Start development mode</h3>
 
-                        <p>
-                            Development mode does two things when triggered:
-                            <ol>
-                                <li>
-                                    Instructs webpack to compile heavy libraries (React, ReactDOM, etc) to the <code>dist/lib/</code> folder
-                                </li>
-                                <li>
-                                    Starts the development server, <code>server.js</code>
-                                </li>
-                                <li>Starts up webpack in watch mode to rebuild your source code anytime there is a change</li>
-                            </ol>
-                        </p>
+                        <p>Development mode does three (3) things when triggered:</p>
+
+                        <ol className="mb-4">
+                            <li>
+                                Instructs webpack to compile heavy libraries (React, ReactDOM, etc) to the <code>dist/lib/</code> folder
+                            </li>
+                            <li>
+                                Starts the development server, <code>server.js</code>
+                            </li>
+                            <li>Starts up webpack in watch mode to rebuild your source code anytime there is a change</li>
+                        </ol>
 
                         <p className="mb-5">
-                            To start the development, run <code>yarn dev</code> or <code>npm start dev</code>.
+                            To start the development, run <code>yarn dev</code> or <code>npm run dev</code>.
                         </p>
                     </div>
 
@@ -305,7 +310,7 @@ export const FrontEndServerGuide = (): any => {
                         <h3>Previewing</h3>
 
                         <p className="mb-5">
-                            To view our application, open your browser and enter <code>http://127.0.0.1:3000</code> in the address bar. Since we are
+                            To view our application, open your browser and enter <code>http://127.0.0.1:8000</code> in the address bar. Since we are
                             running a server, the request will be processed and the webpage will be rendered.
                         </p>
                     </div>

@@ -56,7 +56,7 @@ export const GuidesSection = (): any => {
         if (section) {
             window.scrollTo({
                 behavior: "smooth",
-                top: section.getBoundingClientRect().top + window.scrollY - activeSectionScrollThreshold,
+                top: section.getBoundingClientRect().top + window.scrollY - activeSectionScrollThreshold + 1,
                 left: 0
             });
         }

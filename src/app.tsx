@@ -2,7 +2,7 @@ import React from "react";
 import { Topbar } from "./topbar";
 import { ToolsSection } from "./tools-section";
 import { ComparisonSection } from "./comparison-section";
-import { GuidesSection, StaticFrontEndGuide, FrontEndServerGuide, ApiServerGuide } from "./guides";
+import { GuidesSection, StaticFrontEndGuide, FrontEndServerGuide, ApiServerGuide, FullStackAppGuide } from "./guides";
 import "./app.scss";
 
 export const App = (): any => {
@@ -38,6 +38,8 @@ export const App = (): any => {
             <FrontEndServerGuide />
 
             <ApiServerGuide />
+
+            <FullStackAppGuide />
         </div>
     );
 };
