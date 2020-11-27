@@ -4,6 +4,7 @@ import { ToolsSection } from "./tools-section";
 import { ComparisonSection } from "./comparison-section";
 import { GuidesSection, StaticFrontEndGuide, FrontEndServerGuide, ApiServerGuide, FullStackAppGuide } from "./guides";
 import "./app.scss";
+import { HowItWorksSection } from "./how-it-works-section";
 
 export const App = (): any => {
     return (
@@ -28,6 +29,8 @@ export const App = (): any => {
             </section>
 
             <ComparisonSection />
+
+            <HowItWorksSection />
 
             <ToolsSection />
 
