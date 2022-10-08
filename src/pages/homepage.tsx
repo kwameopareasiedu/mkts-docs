@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {
   Avatar,
   Box,
+  Link,
   Tab,
   TabList,
   TabPanel,
@@ -14,7 +15,7 @@ import dayjs from "dayjs";
 import { useQueryParams } from "react-simple-widgets/dist/use-query-params";
 import { useWindowBreakpoints } from "react-simple-widgets/dist/use-window-breakpoints";
 import MeImg from "../assets/me.jpg";
-import { IntroTab } from "../components";
+import { IntroTab, UsageTab } from "../components";
 
 const HomepageRoot = styled.div`
   --sm-width: 400px;
@@ -78,8 +79,18 @@ export default function Homepage() {
         <Box textAlign="center">
           <Avatar src={MeImg} size="xl" mb={2} />
 
-          <Text textAlign="center" fontSize="4xl">
+          <Text textAlign="center" fontSize="4xl" mb={0} lineHeight={1}>
             mkts
+          </Text>
+
+          <Text textAlign="center" fontSize="sm" fontStyle="italic" mb={2}>
+            v3.0.0,{" "}
+            <Link
+              color="teal.500"
+              href="https://github.com/kwameopareasiedu"
+              isExternal>
+              @kwameopareasiedu
+            </Link>
           </Text>
 
           <Text textAlign="center" fontStyle="italic" mb={4}>
@@ -127,7 +138,9 @@ export default function Homepage() {
             <TabPanel>
               <IntroTab />
             </TabPanel>
-            <TabPanel>Usage</TabPanel>
+            <TabPanel>
+              <UsageTab />
+            </TabPanel>
           </TabPanels>
         </Tabs>
       </Content>
