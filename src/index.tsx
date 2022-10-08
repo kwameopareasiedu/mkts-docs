@@ -8,8 +8,8 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
   fonts: {
     body: "Source Sans Pro, sans-serif",
-    heading: "Georgia, serif",
-    mono: "Menlo, monospace"
+    heading: "Source Sans Pro, sans-serif",
+    mono: "Source Code Pro, monospace;"
   }
 });
 

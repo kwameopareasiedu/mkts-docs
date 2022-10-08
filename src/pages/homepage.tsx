@@ -14,6 +14,7 @@ import dayjs from "dayjs";
 import { useQueryParams } from "react-simple-widgets/dist/use-query-params";
 import { useWindowBreakpoints } from "react-simple-widgets/dist/use-window-breakpoints";
 import MeImg from "../assets/me.jpg";
+import { IntroTab } from "../components";
 
 const HomepageRoot = styled.div`
   --sm-width: 400px;
@@ -111,6 +112,7 @@ export default function Homepage() {
         <Tabs
           height="100%"
           display="flex"
+          overflow="hidden"
           flexDirection="column"
           variant="enclosed-colored"
           index={Math.max(0, tabs.indexOf(qp.tab))}
@@ -121,8 +123,10 @@ export default function Homepage() {
             <Tab>Usage</Tab>
           </TabList>
 
-          <TabPanels flex="1 1">
-            <TabPanel>Installation</TabPanel>
+          <TabPanels flex="1 1" overflow="auto">
+            <TabPanel>
+              <IntroTab />
+            </TabPanel>
             <TabPanel>Usage</TabPanel>
           </TabPanels>
         </Tabs>
