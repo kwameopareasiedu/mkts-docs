@@ -18,7 +18,8 @@ import MeImg from "../assets/me.jpg";
 import { IntroTab, UsageTab } from "../components";
 
 const HomepageRoot = styled.div`
-  --sm-width: 400px;
+  --width: 300px;
+  --lg-width: 400px;
 
   position: relative;
   display: flex;
@@ -32,25 +33,30 @@ const HomepageRoot = styled.div`
       top: 0;
       left: 0;
       bottom: 56px;
-      width: var(--sm-width);
+      width: var(--width);
     }
 
     #content {
       height: 100%;
       border-left: 1px solid #e3e3e3;
-      margin-left: var(--sm-width);
+      margin-left: var(--width);
     }
 
     footer {
       position: absolute;
       left: 0;
       bottom: 0;
-      width: var(--sm-width);
+      width: var(--width);
     }
+  }
+
+  @media screen and (min-width: 992px) {
+    --width: var(--lg-width);
   }
 
   #content {
     flex: 1 1;
+    overflow: hidden;
   }
 `;
 

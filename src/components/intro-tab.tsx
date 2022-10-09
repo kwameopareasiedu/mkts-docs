@@ -175,7 +175,7 @@ export const IntroTab = (): JSX.Element => {
           <Code>mkts</Code> should be installed as a global dependency
         </Text>
 
-        <SimpleGrid columns={2} spacing={4}>
+        <SimpleGrid columns={[1, 1, 1, 2]} spacing={4}>
           <GridItem>
             <Code mb={2}>Yarn</Code>
             <Code
