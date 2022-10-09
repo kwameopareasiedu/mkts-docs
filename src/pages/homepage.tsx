@@ -107,7 +107,7 @@ export default function Homepage() {
 
           <Box textAlign="center">
             <a
-              href="https://kwameopareasiedu.github.io/mkts"
+              href="https://github.com/kwameopareasiedu/mkts"
               target="_blank"
               rel="noreferrer noopener">
               <Text as="i" className="bi bi-github" fontSize="2xl"></Text>
