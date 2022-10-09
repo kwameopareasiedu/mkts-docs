@@ -89,7 +89,7 @@ export const IntroTab = (): JSX.Element => {
               </Td>
               <Td>
                 <Text>
-                  React web application base built on top on{" "}
+                  React web application base built on top of{" "}
                   <Link color="teal.400" href="https://vitejs.dev/" isExternal>
                     Vite{" "}
                     <Text
