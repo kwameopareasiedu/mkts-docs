@@ -3,11 +3,8 @@ import styled from "styled-components";
 import {
   Code,
   Container,
-  GridItem,
   Heading,
   Highlight,
-  Link,
-  SimpleGrid,
   Table,
   Tbody,
   Td,
