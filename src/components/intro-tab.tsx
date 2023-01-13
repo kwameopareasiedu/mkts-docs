@@ -36,7 +36,7 @@ export const IntroTab = (): JSX.Element => {
         <Text mb={6}>
           <Code>mkts</Code> is a command line interface (CLI) tool that creates
           a base codebase for modern Typescript projects. It supports
-          scaffolding for three (3) types of projects.
+          scaffolding for two (2) types of projects.
         </Text>
 
         <Table mb={6}>
@@ -79,50 +79,6 @@ export const IntroTab = (): JSX.Element => {
                   </Link>{" "}
                   backend projects which expose REST APIs that can be consumed
                   by a compliant client
-                </Text>
-              </Td>
-            </Tr>
-
-            <Tr>
-              <Td>
-                <Code>Web</Code>
-              </Td>
-              <Td>
-                <Text>
-                  React web application base built on top of{" "}
-                  <Link color="teal.400" href="https://vitejs.dev/" isExternal>
-                    Vite{" "}
-                    <Text
-                      as="i"
-                      className="bi bi-box-arrow-up-right"
-                      fontSize="xs"
-                    />
-                  </Link>
-                  . Routing is handled by{" "}
-                  <Link
-                    color="teal.400"
-                    href="https://reactrouter.com/"
-                    isExternal>
-                    React Router DOM{" "}
-                    <Text
-                      as="i"
-                      className="bi bi-box-arrow-up-right"
-                      fontSize="xs"
-                    />
-                  </Link>{" "}
-                  and state management is handled by{" "}
-                  <Link
-                    color="teal.400"
-                    href="https://github.com/pmndrs/zustand#readme"
-                    isExternal>
-                    Zustand{" "}
-                    <Text
-                      as="i"
-                      className="bi bi-box-arrow-up-right"
-                      fontSize="xs"
-                    />
-                  </Link>
-                  .
                 </Text>
               </Td>
             </Tr>

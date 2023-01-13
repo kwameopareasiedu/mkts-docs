@@ -66,15 +66,6 @@ export const UsageTab = (): JSX.Element => {
 
             <Tr>
               <Td>
-                <Code>--web</Code>
-              </Td>
-              <Td>
-                <Text>Create a web client application</Text>
-              </Td>
-            </Tr>
-
-            <Tr>
-              <Td>
                 <Code>--lib</Code>
               </Td>
               <Td>

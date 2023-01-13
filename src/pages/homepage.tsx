@@ -90,7 +90,7 @@ export default function Homepage() {
           </Text>
 
           <Text textAlign="center" fontSize="sm" fontStyle="italic" mb={2}>
-            v3.0.0,{" "}
+            v3.1.0,{" "}
             <Link
               color="teal.500"
               href="https://github.com/kwameopareasiedu"
